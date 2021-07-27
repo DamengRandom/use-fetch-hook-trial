@@ -1,0 +1,8 @@
+{
+  "short_name": "@damengrandom/use-fetch-hook-trial",
+  "name": "@damengrandom/use-fetch-hook-trial",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
