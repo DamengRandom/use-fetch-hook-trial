@@ -20,7 +20,7 @@
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "postpublish": "git remote add use-fetch-hook-trial 'git@github.com:DamengRandom/use-fetch-hook-trial.git'"
+    "postpublish": "git push && npm version minor --no-git-tag-version"
   },
   "peerDependencies": {
     "react": ">=16.8.6"
