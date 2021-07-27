@@ -13,16 +13,22 @@ npm install --save @damengrandom/use-fetch-hook-trial
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import { useFetchQuote } from '@damengrandom/use-fetch-hook-trial'
 
-import { useMyHook } from '@damengrandom/use-fetch-hook-trial'
+const App = () => {
+  const endpoint = 'https://jsonplaceholder.typicode.com/todos/1'
+  const { quote, loading } = useFetchQuote(endpoint)
 
-const Example = () => {
-  const example = useMyHook()
+  if (loading) return <p>Loading ..</p>
+
   return (
-    <div>{example}</div>
+    <div>
+      <p><quote>{quote}</quote></p>
+    </div>
   )
 }
+export default App
 ```
 
 ## License

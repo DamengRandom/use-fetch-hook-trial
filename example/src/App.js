@@ -1,11 +1,15 @@
 import React from 'react'
-import { useMyHook } from '@damengrandom/use-fetch-hook-trial'
+import { useFetchQuote } from '@damengrandom/use-fetch-hook-trial'
 
 const App = () => {
-  const example = useMyHook()
+  const endpoint = 'https://jsonplaceholder.typicode.com/todos/1'
+  const { quote, loading } = useFetchQuote(endpoint)
+
+  if (loading) return <p>Loading ..</p>
+
   return (
     <div>
-      {example}
+      <p><quote>{quote}</quote></p>
     </div>
   )
 }

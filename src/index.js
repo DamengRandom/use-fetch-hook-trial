@@ -1,21 +1,21 @@
 import * as React from 'react'
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState({
-    counter: 0
-  })
+export function useFetchQuote(url) {
+  const [quote, setQuote] = React.useState('')
+  const [loading, setLoading] = React.useState(false)
 
   React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter++
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval)
+    async function getStarWarsQuote() {
+      setLoading(true)
+      // Get initial text
+      const response = await fetch(url)
+      const data = await response.json()
+      const quote = data.title
+      setQuote(quote)
+      setLoading(false)
     }
-  }, [])
+    getStarWarsQuote()
+  }, [url])
 
-  return counter
+  return { quote, loading }
 }
