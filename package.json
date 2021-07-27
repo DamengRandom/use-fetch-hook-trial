@@ -1,6 +1,6 @@
 {
   "name": "@damengrandom/use-fetch-hook-trial",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "a trial for creating a custom fetch hook",
   "author": "DamengRandom",
   "license": "MIT",
